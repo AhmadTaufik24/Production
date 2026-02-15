@@ -239,7 +239,7 @@ function renderSalaryTable(viewType, category) {
             // --- Logic Kolom Slide di Tabel Monitor ---
             let qtyDisplay = '-';
             if (i.type === 'Feed') qtyDisplay = `<strong>${i.slides || 1}</strong> Slide`;
-            else if (i.type !== 'Adjust') qtyDisplay = '1 conten';
+            else if (i.type !== 'Adjust') qtyDisplay = '1 content';
 
             html += `
                 <tr style="${isAdj?'background:#fff8e1':''}">
@@ -957,4 +957,5 @@ window.onclick = function(event) {
     }
 
 }
+
 
