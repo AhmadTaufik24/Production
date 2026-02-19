@@ -383,7 +383,7 @@ function preparePDFContent(periodKey, categoryType, callback) {
 
         let qtyDisplay = '-';
         if (i.type === 'Feed') qtyDisplay = `<strong>${i.slides || 1}</strong> Slide`;
-        else if (i.type !== 'Adjust') qtyDisplay = '1 Pcs';
+        else if (i.type !== 'Adjust') qtyDisplay = '1 content';
 
         tbody.innerHTML += `
         <tr>
@@ -957,5 +957,6 @@ window.onclick = function(event) {
     }
 
 }
+
 
 
