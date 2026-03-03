@@ -427,3 +427,149 @@ tr:last-child td { border-bottom: none; }
 }
 
 
+/* =========================================================
+   📱 RESPONSIVE DESIGN (MOBILE & TABLET SUPPORT)
+   ========================================================= */
+
+@media screen and (max-width: 992px) {
+    /* --- Layout Utama Berubah Jadi Kolom --- */
+    body {
+        flex-direction: column;
+        overflow-y: auto; /* Izinkan scroll di body utama */
+        height: auto;
+    }
+
+    /* --- Sidebar Berubah Jadi Header / Topbar --- */
+    .sidebar {
+        width: 100%;
+        padding: 15px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-right: none;
+        border-bottom: 1px solid var(--navbar-border);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 16px;
+        width: 100%; /* Logo di baris pertama */
+        text-align: center;
+    }
+
+    /* --- Menu Item di Topbar --- */
+    .menu-item {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-bottom: 0;
+        flex: 1; /* Menu bagi rata lebarnya */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .menu-section-title {
+        display: none; /* Sembunyikan tulisan "KEUANGAN" biar gak menuhin layar */
+    }
+
+    /* Tombol Backup/Restore pindah ke baris baru */
+    .sidebar > div:nth-child(6) {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        border-top: none;
+        padding-top: 10px;
+    }
+
+    .sidebar > div:nth-child(6) button {
+        margin-top: 0 !important;
+        flex: 1;
+    }
+
+    /* --- Main Area Menyesuaikan Layar --- */
+    .main {
+        padding: 20px 15px;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .header-tools {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-tools h2 {
+        font-size: 20px;
+    }
+
+    .header-tools div {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header-tools button {
+        flex: 1; /* Tombol atas (Manual, Target) bagi rata */
+    }
+
+    /* --- Board / Kanban Menjadi Horizontal Scroll yang Lebih Nyaman --- */
+    .board {
+        padding-bottom: 10px;
+        /* Biarkan scroll menyamping untuk kolom kanban, tapi percantik */
+        scroll-snap-type: x mandatory; 
+    }
+
+    .column {
+        scroll-snap-align: start; /* Supaya pas digeser berhentinya pas di tengah layar */
+        flex: 0 0 85vw; /* Lebar kolom 85% dari layar HP */
+        max-width: 320px;
+        height: 65vh; /* Batasi tinggi agar tetap bisa dislide */
+    }
+
+    /* --- Penyesuaian Tabel Gaji --- */
+    .salary-card {
+        padding: 15px;
+    }
+
+    .salary-card > div:first-child {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .salary-card > div:first-child > div {
+        text-align: left !important;
+    }
+
+    /* Tabel Responsive (Scrollable secara horizontal) */
+    .salary-card table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Jangan gulung teks ke bawah agar tabel gak berantakan */
+    }
+
+    .salary-card table th, 
+    .salary-card table td {
+        padding: 10px 15px;
+    }
+
+    /* --- Penyesuaian Modal (Pop-up) --- */
+    .modal-content {
+        width: 90% !important; /* Modal selebar layar HP */
+        padding: 20px;
+        max-height: 85vh;
+    }
+
+    /* Tombol di dalam modal jadi penuh */
+    .modal-content button {
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
+    
+    .modal-content div[style*="display:flex; gap:10px; margin-top:20px;"] {
+        flex-direction: column;
+    }
+}
